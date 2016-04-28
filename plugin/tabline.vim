@@ -24,15 +24,16 @@ function! Tabline()
     let bufnr = buflist[winnr - 1]
     let bufname = bufname(bufnr)
     let bufmodified = getbufvar(bufnr, "&mod")
-
+    
+    if bufmodified
+      let s .= '[+] '
+    endif
+    
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' ' . tab .':'
     let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
 
-    if bufmodified
-      let s .= '[+] '
-    endif
   endfor
 
   let s .= '%#TabLineFill#'
