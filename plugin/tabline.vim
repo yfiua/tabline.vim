@@ -26,15 +26,14 @@ function! Tabline()
     let bufmodified = getbufvar(bufnr, "&mod")
     
     let s .= '%' . tab . 'T'
-  
-    if bufmodified
-      let s .= '[+] '
-    endif
-    
+
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .':'
+    let s .= ' ' . tab .' '
+    if bufmodified
+        let s .= '[+] '
+    endif
     let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
-  endfor
+endfor
 
   let s .= '%#TabLineFill#'
   return s
