@@ -10,8 +10,7 @@ Configure tab labels within Terminal Vim with a very succinct output.
 
 Tabs in this case, refer to Vim Tabs and not the Terminal.app tabs.
 
-Based on settings found from [offensive
-thinking](http://www.offensivethinking.org/data/dotfiles/vimrc).
+Based on settings found from [offensive thinking](http://www.offensivethinking.org/data/dotfiles/vimrc).
 
 ## Installation
 Install using [Vundle](https://github.com/VundleVim/Vundle.vim):
