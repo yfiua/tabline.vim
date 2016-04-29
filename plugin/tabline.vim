@@ -1,7 +1,7 @@
 " File:        tabline.vim
-" Maintainer:  Matthew Kitt <http://mkitt.net/>
+" Maintainer:  Jun Sun <https://github.com/yfiua>
 " Description: Configure tabs within Terminal Vim.
-" Last Change: 2012-10-21
+" Last Change: 2016-04-29
 " License:     This program is free software. It comes without any warranty,
 "              to the extent permitted by applicable law. You can redistribute
 "              it and/or modify it under the terms of the Do What The Fuck You
@@ -16,7 +16,7 @@ endif
 let g:loaded_tabline_vim = 1
 
 function! Tabline()
-    let s = ''
+    let s = '%#TabLineFill# -> '
     for i in range(tabpagenr('$'))
         let tab = i + 1
         let winnr = tabpagewinnr(tab)
